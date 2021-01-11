@@ -1,0 +1,174 @@
+app-tweet-seeker-page{
+
+    .sm-text {
+        display: none;
+    }
+  
+    @include for-phones() {
+        .sm-text {
+            display: block;
+        }
+        .lg-text {
+            display: none;
+        }
+    }
+
+    .searchcontainer {
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+
+        .search-part {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .search-row {
+                margin-top: 20px;
+                mat-form-field {
+                    display: table-cell;
+                    padding-left: 15px;
+                }
+            }
+
+            mat-button-toggle.mat-button-toggle-checked, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+                background: black;
+                color: white !important;
+            }
+
+            .exclude-section {
+                mat-checkbox {
+                    padding-right: 20px;
+                }
+            }
+
+            .search-bottom-right {
+                position: absolute;
+                bottom: 20px;
+                right: 30px;
+            }
+        }
+
+     }
+    
+    mat-form-field.mat-form-field {
+        font-size: 12px;
+        width: 450px;
+    }
+    
+    .mat-raised-button {
+        background-color: #1f5686 !important;
+        margin: -15px 0px 0px 10px !important;
+    }
+
+    .mat-raised-button.secundary {
+        background-color: #000 !important;
+        margin: -15px 0px 0px 10px !important;
+        color: #fff;
+    }
+
+    .mat-button-toggle {
+        .mat-button-toggle-label-content {
+            mat-icon, span {
+                padding-left: 5px;
+            }
+            mat-icon, span {
+                margin-top: -3.5px;
+            }
+        }
+    }
+
+    .tweet-list-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        font-size: 0.8em;
+    }
+    
+    .tweet-wrapper {
+        display: inline-grid;
+        width: 500px;
+        height: 200px;
+        margin: 10px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 3px;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            .username {
+                font-weight: 700
+            }
+            .mat-icon {
+                margin-top: -8px;
+            }
+        }
+        .content {
+            font-family: monospace;
+        }
+        .footer {
+            .stats-wrapper{
+                display: flex;
+                justify-content: center;
+                background: aliceblue;
+                color: black;
+                padding: 5px;
+                border-radius: 3px;
+                font: status-bar;
+                .stat {
+                    padding-right: 10px;
+                }		
+            }
+        }
+    }
+
+    .tweet-more-wrapper{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        button {
+            width: 50%;
+        }
+    }
+
+    .tweet-queue-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        color: #040404;
+        padding: 15px;
+        flex: auto;
+        cursor: pointer;
+        border: 2px dotted #1f5686;
+        border-radius: 5px;
+        .queue-length-info {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        mat-icon {
+            margin-right: 30px;
+            margin-left: 10px;
+            span.mat-badge-content{
+                background: #1f5686;
+            }
+        }
+        &:hover {
+            background: #fafafa;
+        }
+    }
+    
+    .exclude-section {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 60px;
+        font-size: 12px;
+    }
+
+}

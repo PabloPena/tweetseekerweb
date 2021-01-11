@@ -1,0 +1,17 @@
+<div class="tweet-wrapper">
+    <div class="header">
+        <div class="username">@{{tweet.username}}</div>
+        <div class="date">{{formatDate(tweet.date)}}</div>
+        <mat-icon *ngIf="tweet.isReply" matTooltip="Reply">reply</mat-icon>
+        <mat-icon *ngIf="tweet.isRetweet" matTooltip="Retweet">swap_vert</mat-icon>
+    </div>
+    <div class="content">{{tweet.text}}</div> 
+    <div class="footer">
+        <div class="stats-wrapper">
+            <div class="stat">Likes: {{tweet.likes}}</div>
+            <div class="stat">Replies: {{tweet.replies}}</div>
+            <div class="stat">Quotes: {{tweet.quotes}}</div>
+            <div class="stat">Retweets: {{tweet.retweets}}</div>
+        </div>
+    </div>
+</div>

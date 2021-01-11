@@ -1,0 +1,62 @@
+<ng-container>
+
+  <div class="welcome">
+    <p> This is a simply web utility made in Angular 9 and NodeJS for searching timeline profiles ans tweets in real time. </p>
+    <p> You can toggle the selector to search for tweets in two modes: <b>Timeline</b> to load a user's tweets without date limit or <b>search</b> to check recent tweets (last week) in <b>REAL TIME</b>. </p>
+    <p> Be careful not to keep alive the second tab for too long. The associated development account has a monthly search limit and live mode can consume a lot of cap space depending on the keywords.</p>
+    <p> If you are using a mobile, I apologize, the application is not yet optimized for these purposes.</p>
+    <br/><p> Feel free to test it. </p><br/>
+  </div>  
+
+  <mat-card>
+
+    <div class="searchcontainer">
+
+      <div class="search-part">
+
+        <div class="search-row">
+          <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="mode">
+            <mat-button-toggle value="timeline"><mat-icon>timeline</mat-icon><span>Get user timeline</span></mat-button-toggle>
+            <mat-button-toggle value="tweets"><mat-icon>live_tv</mat-icon><span>Search tweets</span></mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+
+        <div class="search-row" *ngIf="group.value === 'timeline'">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="@Bake250" [(ngModel)]="username">
+          </mat-form-field>
+        </div>
+
+        <div class="search-row" *ngIf="group.value === 'tweets'">
+          <mat-form-field appearance="outline" *ngIf="group.value === 'tweets'">
+            <mat-label>Search by term</mat-label>
+            <input matInput placeholder="angular" [(ngModel)]="keyword">
+          </mat-form-field>
+          <mat-form-field appearance="outline" >
+            <mat-label>Search by hashtag</mat-label>
+            <input matInput placeholder="#angular" [(ngModel)]="hashtag">
+          </mat-form-field>
+        </div>
+
+        <section class="exclude-section">
+          <mat-checkbox [(ngModel)]="excludeRetweets">Exclude retweets</mat-checkbox>
+          <mat-checkbox [(ngModel)]="excludeReplies">Exclude replies</mat-checkbox>
+        </section>
+
+        <div class="search-bottom-right">
+          <button mat-raised-button color="primary" type="submit" (click)="processRequest()" [disabled]="!requestIsValid()">
+            <span class="sm-text">Search</span>
+            <span class="lg-text">Search Tweets</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </mat-card>
+
+  <app-tweet-list [currentFilter]="currentFilter$ | async" [mode]="mode$ | async"></app-tweet-list>
+
+</ng-container>

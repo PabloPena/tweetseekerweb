@@ -1,0 +1,9 @@
+<app-layout>
+  <div class="layout-content">
+    <router-outlet></router-outlet>
+  </div>
+</app-layout>
+
+<app-snack-bar [notification]="notification$ | async"></app-snack-bar>
+
+<app-footer></app-footer>

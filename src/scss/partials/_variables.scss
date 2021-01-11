@@ -1,0 +1,23 @@
+/**
+ * Common
+ */
+$bg-color:                         aliceblue;
+$fg-color:                         #646363;
+$main-font:                        Georgia, sans-serif;
+
+/**
+ * Typography
+ */
+$font-family: $main-font;
+$font-size: 13px;
+$font-color: $fg-color;
+
+ /**
+  * Media breakpoints
+  */
+  $media-tablet: 990px;
+  $media-phone: 768px;
+  $media-desktop-subsmall: 1200px;
+  $media-desktop-small: 1300px;
+  $media-desktop-medium: 1600px;
+

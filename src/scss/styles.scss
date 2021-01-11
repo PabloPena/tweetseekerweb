@@ -1,0 +1,14 @@
+@use "normalize.css/normalize";
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~material-icons/iconfont/material-icons.css';
+
+@import 'partials/variables';
+
+@import 'partials/mixins';
+
+@import 'partials/base';
+
+@import 'partials/seeker';
+
+

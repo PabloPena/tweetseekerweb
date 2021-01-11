@@ -1,0 +1,18 @@
+<div style="margin-top:30px;" *ngIf="((queueLength$ | async) > 0) || ((tweets$ | async)?.length > 0)">
+    <div class="tweet-queue-wrapper" *ngIf="(queueLength$ | async) > 0" (click)="releaseQueue()">
+        <div class="queue-length-info">
+            <mat-icon [matBadge]="queueLength$ | async">slideshow</mat-icon>
+            <span>Show new tweets ...</span>
+            <mat-icon>expand_more</mat-icon>
+        </div>
+    </div>
+    <div class="tweet-list-wrapper">
+        <app-tweet *ngFor="let tweet of (tweets$ | async)" [tweet]=tweet></app-tweet>
+    </div>
+    <div class="tweet-more-wrapper" *ngIf="(nextPageRequestToken$ | async)">
+        <mat-spinner [diameter]="30" [strokeWidth]="3" *ngIf="(loadingNextPage$ | async)"></mat-spinner>
+        <button mat-raised-button color="primary" type="submit" (click)="processNextPage()" *ngIf="!(loadingNextPage$ | async)">
+            <span>Load more tweets ...</span>
+        </button>
+    </div>
+</div>

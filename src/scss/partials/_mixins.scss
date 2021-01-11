@@ -1,0 +1,26 @@
+/**
+ * Media queries
+ */
+@mixin for-tablets-and-under {
+  @media (max-width: $media-tablet) { @content; }
+}
+
+@mixin for-subsmall-desktop-and-under {
+  @media (max-width: $media-desktop-subsmall) { @content; }
+}
+
+@mixin for-small-desktop-and-under {
+  @media (max-width: $media-desktop-small) { @content; }
+}
+
+@mixin for-medium-desktop-and-under {
+  @media (max-width: $media-desktop-medium) { @content; }
+}
+
+@mixin for-phones {
+  @media (max-width: $media-phone) { @content; }
+}
+
+@mixin for-desktop {
+  @media (min-width: $media-tablet + 1) { @content; }
+}
