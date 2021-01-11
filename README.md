@@ -11,7 +11,7 @@ The app has been developing for training purposes.
 
 ### Demo
 
-Demo application deployed on Firebase. Check out here: ¿?PENDING¿?
+Demo application deployed on Firebase. Check out here: (https://tweetseekerapi-okppg.web.app)
 
 ### Install packages and globals
 
