@@ -35,5 +35,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Currenty only one configuration is enabled: demo. This configuration replace the default environment file with the environment.[cfg] file, both stored in `environments/` folder.
 For deploying the webapp make sure you have configured correctly the config associated file (api base url, api path, etc.)
 
-ng build --configuration=[cfg]
+`$ng build --configuration=demo`
 
